@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food Safety App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Food Safety App</h1>
+
+      <div class="form">
+        <div class="form-group">
+          <label for="food-category">Food Category:</label>
+          <select id="food-category" required>
+            <option value="">--Select--</option>
+            <option value="frozen-and-meat">Frozen and Meat</option>
+            <option value="confectionary">Confectionary</option>
+            <option value="vegetables-and-fruits">Vegetables and Fruits</option>
+          </select>
+          <div class="error-msg" id="food-category-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="food-name">Food Name:</label>
+          <input type="text" id="food-name" required>
+          <div class="error-msg" id="food-name-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="purchase-date">Date of Purchase:</label>
+          <input type="date" id="purchase-date" required>
+          <div class="error-msg" id="purchase-date-error"></div>
+        </div>
+
+        <button onclick="calculateExpiry()" class="calc-btn">Calculate Expiry</button>
+
+        <div class="form-group">
+          <label for="expiry-date">Expiry Date:</label>
+          <div id="expiry-date"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="tips">Tips:</label>
+          <div id="tips" class="tooltip">
+            <span class="tooltiptext">Here are some tips for storing your food to extend its shelf life.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <button onclick="showFeedbackForm()">Report an Issue or Provide Feedback</button>
+      <div id="feedback-form" class="feedback-form">
+        <form>
+          <h2>Report an Issue or Provide Feedback</h2>
+          <label for="feedback-name">Name:</label>
+          <input type="text" id="feedback-name" required>
+          <label for="feedback-email">Email:</label>
+          <input type="email" id="feedback-email" required>
+          <label for="feedback-message">Message:</label>
+          <textarea id="feedback-message" rows="4" required></textarea>
+          <button type="submit" class="submit-btn">Submit</button>
+          <button type="button" onclick="hideFeedbackForm()">Cancel</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Food Safety App. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
